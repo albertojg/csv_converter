@@ -119,8 +119,8 @@ function readFromCsv(source, completeCallback) {
       headers: true
     })
     .on('data', function(row) {
-      // data[row.key] = row.translated_value;
-      data[row.key] = row.string_value;
+      data[row.key] = row.translated_value;
+      // data[row.key] = row.string_value;
     })
     .on('end', function() {
       if (completeCallback) {
