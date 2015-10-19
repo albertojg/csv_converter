@@ -1,0 +1,15 @@
+{
+  "name": "converter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "converter.js",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "fast-csv": "^0.6.0",
+    "xml2js": "0.4.13"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "private": true
+}
