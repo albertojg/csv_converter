@@ -76,21 +76,9 @@ function convertXmlToCsv(source, output) {
       xml.resources.string.forEach(function(item) {
         var key = item.$.name;
         var value = item._;
-        object[key] = {
-          "string_value": value
-        };
+        object[key] = value;
       });
-
-      fs.readFile('./input/strings_zh.xml', function(err, data1) {
-        parser.parseString(data1, function(err, xml1) {
-          xml1.resources.string.forEach(function(item1) {
-            var key1 = item1.$.name;
-            var value1 = item1._;
-            object[key1].translated_value = value1;
-          });
-          writeToCsv(object, output);
-        });
-      });
+      writeToCsv(object, output);
     });
   });
 }
@@ -152,8 +140,8 @@ function writeToCsv(data, destination) {
       transform: function(key) {
         return {
           'key': key,
-          'string_value': data[key].string_value,
-          'translated_value': data[key].translated_value,
+          'string_value': data[key],
+          'translated_value': '',
           'remarks': ''  
         };
       }
